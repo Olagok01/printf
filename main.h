@@ -16,7 +16,7 @@
 
 typedef struct func
 {
-	char x;
+	char c;
 	int (*func_ptr)(va_list);
 } func_op;
 
@@ -24,6 +24,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list);
 int print_str(va_list);
-int (*get_function(char x))(va_list args);
+int (*get_function(char c))(va_list args);
 
 #endif /* MAIN_H */

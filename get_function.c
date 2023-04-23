@@ -7,11 +7,11 @@
  * Return: pointer to function to perform
  */
 
-int (*get_function(char x))(va_list args)
+int (*get_function(char c))(va_list args)
 {
 	func_op opr[] = {
 		{'c', print_char},
-		{'s', print_string},
+		{'s', print_str},
 		{'x', NULL}
 	};
 	int index;
