@@ -24,6 +24,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list);
 int print_str(va_list);
-int (*get_function(char c))(va_list args);
+int (*get_function(char))(va_list);
 
 #endif /* MAIN_H */
