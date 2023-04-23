@@ -10,9 +10,8 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i;
-	char *str;
 	va_list args;
-	int (*func_ptr)(va_list)
+	int (*func_ptr)(va_list);
 
 	if (format == NULL)
 	{
