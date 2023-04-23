@@ -11,7 +11,7 @@ int (*get_func(char x))(va_list)
 	spec arr[] = {
 		{"c", print_c},
 		{"s", print_s},
-		{"%", print_percent}
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 	while (arr[i].valid)
