@@ -18,7 +18,7 @@ int (*check_function(char c))(va_list ap)
 
 	i = 0;
 	while (opr[i].c != 'x')
-	{:wq
+	{
 		if (opr[i].c == c)
 			return (opr[i].func_ptr);
 		i++;
