@@ -19,7 +19,7 @@ int (*get_function(char c))(va_list args)
 	index = 0;
 	while (opr[index].x)
 	{
-		if (c = opr[index].x[0])
+		if (c == opr[index].x[0])
 			return (opr[index].func_ptr);
 		index++;
 	}
