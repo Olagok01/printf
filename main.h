@@ -20,5 +20,6 @@ int _printf(const char *format, ...);
 int print_c(va_list args);
 int print_s(va_list args);
 int _putchar(char c);
+int (*get_func(char x))(va_list args);
 
 #endif /* MAIN_H *
