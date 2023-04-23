@@ -1,27 +1,29 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /**
- * struct specifier - struct specifier
- * @valid: the valid character.
- * @f: the functions associated.
+ * struct func - group of functions to perform
+ * @c: the value to look out for
+ * @func_ptr: the function to point to
  *
+ * Description: should scan through the list and choose the
+ * right function for operation
  */
-typedef struct specifier
+
+typedef struct func
 {
-	char *valid;
-	int (*f)(va_list);
-} spec;
+	char c;
+	int (*func_ptr)(va_list);
+} f_options;
 
 int _printf(const char *format, ...);
-int print_c(va_list args);
-int print_s(va_list args);
-int print_percent(va_list args);
 int _putchar(char c);
-int (*get_func(char x))(va_list args);
+int print_char(va_list);
+int print_string(va_list);
+int (*check_function(char))(va_list);
 
-#endif /* MAIN_H *
+#endif /* MAIN_H */
