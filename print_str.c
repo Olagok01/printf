@@ -2,14 +2,14 @@
 
 /**
  * print_string - prints a string
- * @ap: va_arg
+ * @args: va_arg
  *
  * Return: Number of char printed
  */
 
-int print_string(va_list ap)
+int print_string(va_list args)
 {
-	char *str = va_arg(ap, char *);
+	char *str = va_arg(args, char *);
 	int i, count;
 
 	if (str == NULL)

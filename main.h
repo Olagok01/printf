@@ -16,14 +16,14 @@
 
 typedef struct func
 {
-	char c;
+	char x;
 	int (*func_ptr)(va_list);
-} f_options;
+} func_op;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list);
-int print_string(va_list);
-int (*check_function(char))(va_list);
+int print_str(va_list);
+int (*get_function(char x))(va_list args);
 
 #endif /* MAIN_H */

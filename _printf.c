@@ -10,10 +10,10 @@
 int _printf(const char *format, ...)
 {
 	int i, count = 0;
-	va_list ap;
+	va_list args;
 	int (*func_ptr)(va_list);
 
-	va_start(ap, format);
+	va_start(args, format);
 	i = 0;
 	if (format == NULL)
 		return (-1);
@@ -27,15 +27,15 @@ int _printf(const char *format, ...)
 				count += _putchar('%');
 			else
 			{
-				func_ptr = check_function(format[i]);
-				count += func_ptr(ap);
+				func_ptr = get_function(format[i]);
+				count += func_ptr(args);
 			}
 		}
 		else
 			count += _putchar(format[i]);
 		i++;
 	}
-	va_end(ap);
+	va_end(args);
 
 	return (count);
 }
