@@ -12,14 +12,14 @@ int (*get_function(char c))(va_list args)
 	func_op opr[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'x', NULL}
+		{NULL, NULL}
 	};
 	int index;
 
 	index = 0;
-	while (opr[index].c != 'x')
+	while (opr[index].x)
 	{
-		if (opr[index].c == c)
+		if (c = opr[index].x[0])
 			return (opr[index].func_ptr);
 		index++;
 	}
