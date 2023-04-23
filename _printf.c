@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stddef.h>
-#include <stdarg.h>
-
 
 /**
  * _printf - replicate the printf function

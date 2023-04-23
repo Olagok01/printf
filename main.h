@@ -11,6 +11,9 @@
  * right function for operation
  */
 
+#include <stddef.h>
+#include <stdarg.h>
+
 typedef struct funct
 {
 	char c;
