@@ -1,41 +1,52 @@
-#include "main.h"
-
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
+#include <stddef.h>
 /**
- * _printf - print a string
- * @format: a formatted string
- *
- * Return: Number of characters printed
+ * _printf - recreates the printf function
+ * @format: string with format specifier
+ * Return: number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
-	va_list ap;
-	int (*func_ptr)(va_list);
-
-	va_start(ap, format);
-	i = 0;
-	if (format == NULL)
-		return (-1);
-
-	while (format && format[i] != '\0')
+	if (format != NULL)
 	{
-		if (format[i] == '%')
+		int count = 0, i;
+		int (*m)(va_list);
+		va_list args;
+
+		va_start(args, format);
+		i = 0;
+		if (format[0] == '%' && format[1] == '\0')
+			return (-1);
+		while (format != NULL && format[i] != '\0')
 		{
-			i++;
 			if (format[i] == '%')
-				count += _putchar('%');
+			{
+				if (format[i + 1] == '%')
+				{
+					count += _putchar(format[i]);
+					i += 2;
+				}
+				else
+				{
+					m = get_func(format[i + 1]);
+					if (m)
+						count += m(args);
+					else
+						count = _putchar(format[i]) + _putchar(format[i + 1]);
+					i += 2;
+				}
+			}
 			else
 			{
-				func_ptr = check_function(format[i]);
-				count += func_ptr(ap);
+				count += _putchar(format[i]);
+				i++;
 			}
 		}
-		else
-			count += _putchar(format[i]);
-		i++;
+		va_end(args);
+		return (count);
 	}
-	va_end(ap);
-
-	return (count);
+	return (-1);
 }
