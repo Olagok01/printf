@@ -8,18 +8,18 @@
 
 int (*get_function(char c))(va_list args)
 {
-	func_op arr[] = {
+	func_op opr[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'NULL', NULL}
+		{'x', NULL}
 	};
 	int i;
 
 	i = 0;
-	while (arr[i].c != 'NULL')
+	while (arr[i].c != 'x')
 	{
-		if (arr[i].c == c)
-			return (arr[i].func_ptr);
+		if (opr[i].c == c)
+			return (opr[i].func_ptr);
 		i++;
 	}
 
