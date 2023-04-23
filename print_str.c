@@ -6,23 +6,16 @@
  * Return: number of characters
  */
 
-int print_s(va_list args)
+int print_str(char *str)
 {
 	int i, count = 0;
-	char *str;
 
 	i = 0;
-	str = va_arg(args, char*);
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
 
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		count += _putchar(str[i]);
 		i++;
-		count++;
 	}
 	return (count);
 }
