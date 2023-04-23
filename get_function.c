@@ -17,7 +17,7 @@ int (*get_function(char c))(va_list args)
 	int index;
 
 	index = 0;
-	while (opr[index].x)
+	while (opr[index].x != NULL)
 	{
 		if (c == opr[index].x)
 			return (opr[index].func_ptr);
