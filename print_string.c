@@ -3,11 +3,10 @@
 /**
  * print_string - prints a string
  * @args: va_arg
- *
  * Return: Number of char printed
  */
 
-int print_str(va_list args)
+int print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i, count;
@@ -21,6 +20,5 @@ int print_str(va_list args)
 		count += _putchar(str[i]);
 		i++;
 	}
-
 	return (count);
 }

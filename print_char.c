@@ -3,7 +3,6 @@
 /**
  * print_char - prints a character
  * @args: va_arg
- *
  * Return: int
  */
 
