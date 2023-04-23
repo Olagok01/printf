@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 {
 	int count = 0, i;
 	char *str;
-
 	va_list args;
+	int (*func_ptr)(va_list)
 
 	if (format == NULL)
 	{
@@ -31,16 +31,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c')
-				count += print_char(va_arg(args, int));
 			else if (format[i] == '%')
 				count += _putchar('%');
-			else if (format[i] == 's')
+			else
 			{
-				str = va_arg(args, char *);
-				if (str == NULL)
-					str = "(null)";
-				count += print_str(str);
+				func_ptr = get_function(format[i]);
+				count += func_ptr(args);
 			}
 		}
 		else
@@ -49,7 +45,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	_putchar('\n');
 	va_end(args);
 	return (count);
 }
