@@ -28,7 +28,8 @@ int _printf(const char *format, ...)
 			else
 			{
 				func_ptr = get_function(format[i]);
-				count += func_ptr(args);
+				if (func_ptr)
+					count += func_ptr(args);
 			}
 		}
 		else
