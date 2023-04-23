@@ -2,7 +2,7 @@
 
 /**
  * print_str - prints a string
- * @arg: va_arg
+ * @args: va_arg
  * Return: number of characters printed
  */
 
