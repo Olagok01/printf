@@ -5,7 +5,7 @@
 
 /**
  * _printf - replicate the printf function
- * @format - the formatted string
+ * @format: the formatted string
  * @...: A variable number of numbers to be printed.
  * Return: Number of printed character
  */
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			{
 				str = va_arg(args, char *);
 				if (str == NULL)
-					return "(null)";
+					str = "(null)";
 				count += print_str(str);
 			}
 		}
