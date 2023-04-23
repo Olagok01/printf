@@ -2,22 +2,23 @@
 
 /**
  * print_str - prints a string
- * @str: string entered
- * Return: number of characters
+ * @arg: va_args
+ * Return: number of characters printed
  */
 
 int print_str(va_list args)
 {
 	char *str = va_arg(args, char*)
-	int i, count = 0;
+	int index, count;
 
 	if (str == NULL)
 		str = "(null)";
-	i = 0;
-	while (str[i] != '\0')
+	index = 0;
+	count = 0;
+	while (str[index] != '\0')
 	{
-		count += _putchar(str[i]);
-		i++;
+		count += _putchar(str[index]);
+		index++;
 	}
 	return (count);
 }

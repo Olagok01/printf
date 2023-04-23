@@ -2,13 +2,13 @@
 
 /**
  * print_char - prints character
- * @c: character entered
- * Return: number of characters
+ * @arg: va_arg
+ * Return: number of character
  */
 
 int print_char(va_list args)
 {
-	char c = va_args(args, int);
+	char c = va_arg(args, int);
 
 	return (_putchar(c));
 }
