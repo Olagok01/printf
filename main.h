@@ -16,7 +16,7 @@
 
 typedef struct func
 {
-	char x;
+	char c;
 	int (*func_ptr)(va_list);
 } func_op;
 
