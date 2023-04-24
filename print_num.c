@@ -4,7 +4,6 @@
  * print_num - prints an integer to char
  * @value: the number
  * @count: counter of characters to print
- *
  * Return: Nothing.
  */
 

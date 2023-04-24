@@ -35,6 +35,6 @@ void print_num(int, int *);
 
 
 
-int print_octal(va_list);
+int print_octal(va_list args);
 
 #endif
