@@ -17,7 +17,7 @@ int (*get_function(char c))(va_list args)
 	};
 	while (opr[i].valid)
 	{
-		if (opr[i].valid == c)
+		if (*(opr[i].valid) == c)
 			return (opr[i].func_ptr);
 		i++;
 	}
