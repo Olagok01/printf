@@ -20,7 +20,7 @@ int print_octal(va_list args)
 		index++;
 	}
 
-	i--;
+	index--;
 	while (index >= 0)
 	{
 		print_num(array[index], &count);
