@@ -13,6 +13,8 @@ int (*get_function(char c))(va_list args)
 	func_opt opr[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_decimal},
+		{"i", print_integer},
 		{"\0", NULL}
 	};
 	while (opr[i].valid)
