@@ -30,7 +30,7 @@ int print_string(va_list args);
 int (*get_function(char x))(va_list args);
 
 
-
+void print_num(int, int *);
 
 
 
