@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * print_string - prints a string
@@ -17,6 +18,8 @@ int print_string(va_list args)
 	count = 0;
 	while (str[i] != '\0')
 	{
+		if (!isprint(str[i]))
+			return (-1);
 		count += _putchar(str[i]);
 		i++;
 	}
