@@ -24,12 +24,15 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 				return (-1);
-			func_ptr = check_function(format[i]);
-			if (func_ptr == NULL)
-				count += _putchar('%') + _putchar(format[i]);
+			if(format[i] == '%')
+				count += _putchar('%');
 			else
 			{
-				count += func_ptr(args);
+				func_ptr = get_function(format[i]);
+				if (func_ptr == NULL)
+					count += _putchar('%') + _putchar(format[i]);
+				else
+					count += func_ptr(args);
 			}
 		}
 		else

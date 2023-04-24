@@ -17,12 +17,12 @@ typedef struct func
 {
 	char *valid;
 	int (*func_ptr)(va_list);
-} f_options;
+} func_opt;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
-int (*check_function(char x))(va_list args);
+int (*get_function(char x))(va_list args);
 
 #endif

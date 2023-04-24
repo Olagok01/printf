@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * check_function - checks the character a
+ * get_function - checks the character a
  *	sends a function to perform
  * @c: takes a character
  * Return: pointer to function to perform
  */
 
-int (*check_function(char c))(va_list args)
+int (*get_function(char c))(va_list args)
 {
 	int i = 0;
-	f_options opr[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL}
+	func_opt opr[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'\0', NULL}
 	};
 	while (opr[i].valid)
 	{
