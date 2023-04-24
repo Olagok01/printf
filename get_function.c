@@ -11,13 +11,13 @@ int (*get_function(char c))(va_list args)
 {
 	int i = 0;
 	func_opt opr[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'\0', NULL}
+		{"c", print_char},
+		{"s", print_string},
+		{"\0", NULL}
 	};
 	while (opr[i].valid)
 	{
-		if (opr[i].valid) == c)
+		if (opr[i].valid == c)
 			return (opr[i].func_ptr);
 		i++;
 	}
