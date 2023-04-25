@@ -3,7 +3,7 @@
 /**
  * print_binary - changes number from base 10 to base 2
  * @args: arguments
- * Return: Success(0)
+ * Return: binary numbers
  */
 
 int print_binary(va_list args)
