@@ -29,5 +29,6 @@ int print_string(va_list args);
 int (*get_function(char x))(va_list args);
 int print_integer(va_list args);
 int print_decimal(va_list args);
+int print_binary(va_list args);
 
 #endif

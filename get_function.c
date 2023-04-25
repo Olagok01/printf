@@ -15,6 +15,7 @@ int (*get_function(char c))(va_list args)
 		{"s", print_string},
 		{"d", print_decimal},
 		{"i", print_integer},
+		{"b", print_binary},
 		{"\0", NULL}
 	};
 	while (opr[i].valid)
