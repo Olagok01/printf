@@ -11,22 +11,23 @@ int print_binary(va_list args)
 	unsigned int num;
 	char binary[32];
 	int i = 0, j;
+	int count = 0;
 
 	num = va_arg(args, unsigned int);
 
+	if (num == 0)
+	{
+		count += _putchar('0');
+	}
 	while (num > 0)
 	{
-		binary[i++] = num % 2 + '0';
+		binary[i] = num % 2 + '0';
 		num /= 2;
+		i++;
 	}
-	if (i == 0)
-	{
-		binary[i++] = '0';
-	}
-	binary[i] = '\0';
 	for (j = i - 1; j >= 0; --j)
 	{
-		_putchar(binary[j]);
+		count += _putchar(binary[j]);
 	}
-	return (0);
+	return (count);
 }
